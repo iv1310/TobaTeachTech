@@ -24,9 +24,6 @@ services:
       - '/var/lib/docker:/var/lib/docker:ro'
   grafana:
     image: grafana/grafana
-    user: "1000"
-    #environment:
-            #  - "GF_SECURITY_ADMIN_PASSWORD=toor"
     volumes:
       - "./grafana_db:/var/lib/grafana"
     depends_on:

@@ -1,0 +1,42 @@
+| Explore [Monitoring Servers and Docker Containers w/ Prometheus and Grafana] >>>>>>>>>=
+=========================================================================================
+
+
+Background :
+----------->
+Monitoring is one of the important part of your infrastructure whuch is mandatory to have. None of the Infrastructure is always stable 
+and cannot be kept without monitoring and alerting. Here we will be looking into how we can monitor our servers and even docker containers
+running inside the server using Grafana, Prometheus, Node Exporter, CAdvisor. 
+[1] Grafana: 
+	- It's a tool which allow to Visualize, Query, Alert your server metrics.
+	- It require to have a Data Source, which can be:
+		--> Prometheus
+		--> Influx
+		--> Aws cloudwatch
+		--> etc
+[2] Prometheus:
+	- It's a monitoring and alerting tool
+	- It providess querying and collecting the multidimensional data
+	- It's one of the popular data source for Grafana
+[3] Node Exporter:
+	- Has wide varieties of server metrics.
+	- It's captures all the Linux Hardware and Kernel Related metrics.
+[4] CAdvisor:
+	- It's stand for Container Advisor and used to aggregate and process all the metrics for the running containers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References:
+[1] https://www.devopsage.com/monitoring-servers-and-docker-containers-using-prometheus-and-grafana/
+[2] https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1

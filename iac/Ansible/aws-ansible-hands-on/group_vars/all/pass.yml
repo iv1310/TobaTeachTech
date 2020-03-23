@@ -1,0 +1,7 @@
+ec2_access_key: [put here]                                      
+ec2_secret_key: [put here]
+instance_type: t2.micro
+image: ami-09a4a9ce71ff3f20b
+region: ap-southeast-1
+key_name: openworld
+

@@ -1,0 +1,12 @@
+---
+- hosts: aws-instance
+  gather_facts: false
+  tasks:
+    - name: Stop EC2 Instance
+      ec2:
+         instance_ids: i-0024c86b26a88656a
+         region: ap-southeast-1
+         state: stopped
+         wait: True
+         vpc_subnet_id: subnet-8c944dd5
+         assign_public_ip: yes

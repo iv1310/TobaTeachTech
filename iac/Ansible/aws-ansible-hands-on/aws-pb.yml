@@ -1,0 +1,23 @@
+- name: EC2 Launcher with Ansible
+  hosts: localhost
+  gather_facts: False
+
+  tasks:
+
+    - name: Provision a set of instances by Ansible
+      ec2:
+         aws_access_key: "{{ec2_access_key}}"
+         aws_secret_key: "{{ec2_secret_key}}"
+         key_name: "{{key_name}}"
+         group: launch-wizard-7
+         instance_type: "{{instance_type}}"
+         image: "{{image}}"
+         wait: true
+         region: "{{region}}"
+         count: 2
+         monitoring: yes
+         vpc_subnet_id: subnet-8c944dd5
+         assign_public_ip: yes
+         instance_tags:
+            Name: server
+      register: ec2

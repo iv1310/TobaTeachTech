@@ -1,0 +1,14 @@
+- name: Terminate EC2 
+  hosts: aws-instance
+  connection: local
+  gather_facts: True
+  vars: 
+    - region: 'ap-southeast-1'
+  tasks:      
+    - name: Terminate instances 
+      ec2:
+        local_action: aws-instance
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_ids }}'
+        region: '{{ region }}'
+        wait: True

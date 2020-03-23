@@ -1,0 +1,26 @@
+--- 
+- hosts: aws-instance
+  gather_facts: true
+ 
+  pre_tasks:
+   - name: Install python to interpreter
+     raw: test -e /usr/bin/python || (sudo apt -y update && sudo apt install -y python3-minimal)
+
+  tasks:
+
+   - name: Install NGINX web server 
+     apt: pkg=nginx state=latest
+     become: yes
+   - name: start nginx
+     service: 
+         name: nginx
+         state: started
+     become: yes
+   - name: Upload assets to hosts
+     template: src=/home/tiotobing/aws/aws-ansible/webserver/index.html dest=/var/www/html/index.html mode=0644
+     become: yes
+   - name: Restart NGINX webserver
+     service:
+         name: nginx
+         state: restarted
+     become: yes

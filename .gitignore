@@ -1,0 +1,7 @@
+./devops/terraform/.terraform
+./devops/terraform/logs
+./devops/terraform/services_account
+
+
+.terraform*
+
